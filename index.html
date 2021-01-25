@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+// task 1
+    var a = 1, b = 1, c, d;
+    c = ++a; alert(c);           // 2 ответ а + 1
+    d = b++; alert(d);           // 1 сначала выводит стартовое значение потом +1
+    c = (2+ ++a); alert(c);      // 5 2 + (a+1) где а уже приняло значение 2
+    d = (2+ b++); alert(d);      // 4 2 + (b+1) где вывод происходит до прибавления 1 но запись в значение после вывода
+    alert(a);                    // 3 так и должно стать
+    alert(b);                    // 3 так и должно стать, ибо присвоение было в предыдущем вычислении
+// task 2
+
+let a = 2;
+let x = 1 + (a *= 2); // 1 + (2 * 2) = 5 x=5
+
+// task 3
+
+let a = (((Math.random() - .5) * 2)*100).toFixed();
+let b = (((Math.random() - .5) * 2)*100).toFixed();
+alert(a);
+alert(b);
+if (a >= 0 && b >= 0) {
+    f = a - b;
+}
+    else if (a < 0 && b < 0) {
+    f = a * b;
+}
+    else if ((a < 0 && b >= 0) || (a >= 0 && b < 0))
+{
+    f = Number(a) + Number(b);
+}
+alert(f)
+
+// task 4
+// Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.
+
+let a = Math.floor(Math.random() * 16);
+alert(a)
+t = ''
+switch (a) {
+    case 0:
+        t = 0;
+    case 1:
+        t += " 1";
+    case 2:
+        t += " 2";
+    case 3:
+        t += " 3";
+    case 4:
+        t += " 4";
+    case 5:
+        t += " 5";
+    case 6:
+        t += " 6";
+    case 7:
+        t += " 7";
+    case 8:
+        t += " 8";
+    case 9:
+        t += " 9";
+    case 10:
+        t += " 10";
+    case 11:
+        t += " 11";
+    case 12:
+        t += " 12";
+    case 13:
+        t += " 13";
+    case 14:
+        t += " 14";
+    case 15:
+        t += " 15";
+    break;
+}
+alert(t)
+
+// second variant of switch function ))))
+// switch (a) {
+//     case 0:
+//         alert('0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15');
+//         break;
+//     case 1:
+//         alert('1,2,3,4,5,6,7,8,9,10,11,12,13,14,15');
+//         break;
+//     case 2:
+//         alert('2,3,4,5,6,7,8,9,10,11,12,13,14,15');
+//         break;
+//     case 3:
+//         alert('3,4,5,6,7,8,9,10,11,12,13,14,15');
+//         break;
+//     case 4:
+//         alert('4,5,6,7,8,9,10,11,12,13,14,15');
+//         break;
+//     case 5:
+//         alert('5,6,7,8,9,10,11,12,13,14,15');
+//         break;
+//     case 6:
+//         alert('6,7,8,9,10,11,12,13,14,15');
+//         break;
+//     case 7:
+//         alert('7,8,9,10,11,12,13,14,15');
+//         break;
+//     case 8:
+//         alert('8,9,10,11,12,13,14,15');
+//         break;
+//     case 9:
+//         alert('9,10,11,12,13,14,15');
+//         break;
+//     case 10:
+//         alert('10,11,12,13,14,15');
+//         break;
+//     case 11:
+//         alert('11,12,13,14,15');
+//         break;
+//     case 12:
+//         alert('12,13,14,15');
+//         break;
+//     case 13:
+//         alert('13,14,15');
+//         break;
+//     case 14:
+//         alert('14,15');
+//         break;
+//     default:
+//          alert('15');
+//         break;
+// }
+
+// task 5 было скучно сделал как хотелось
+
+function sumPer(x, y)
+{
+    return (Number(x) + Number(y));
+}
+function minusPer(x, y)
+{
+    return (x - y);
+}
+function delPer(x, y)
+{
+    return (x / y);
+}
+function umnPer(x, y)
+{
+    return (x * y);
+}
+let x = Number(prompt("Введите Х"));
+let y = Number(prompt("Введите Y"));
+let choice = Number(prompt("Для сложения чисел введите 1, вычитания - 2, деления - 3, умножения - 4"));
+switch (choice) {
+    case 1:
+        perem = sumPer(x, y);
+        break;
+    case 2:
+        perem = minusPer(x, y);
+        break;
+    case 3:
+        perem = delPer(x, y);
+        break;
+    case 4:
+        perem = umnPer(x, y);
+        break;
+}
+alert(perem);
+
+// task 6
+function mathOperation(x, y, choice) {
+
+    switch (choice) {
+        case 1:
+            return (Number(x) + Number(y));
+        case 2:
+            return x - y;
+
+        case 3:
+            return x / y;
+        case 4:
+            return x * y;
+    }
+}
+let x = Number(prompt("Введите Х"));
+let y = Number(prompt("Введите Y"));
+let choice = Number(prompt("Для сложения чисел введите 1, вычитания - 2, деления - 3, умножения - 4"));
+perem = mathOperation(x, y, choice)
+alert(perem)
+
+</script>
+</body>
+</html>
