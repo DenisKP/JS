@@ -5,6 +5,62 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    // Task1
 
+
+    function numberToObject(inspect_num){
+        let number = {units: 0, tens: 0, hundreds: 0};
+        if (inspect_num > 999) { console.log("Вы ввели число больше 999");}
+        else {
+            number.units = Math.floor(inspect_num % 10);
+            number.tens = Math.floor(inspect_num / 10) % 10;
+            number.hundreds = Math.floor(inspect_num / 100);
+            return(number);
+            // or
+            // console.log(number);
+        }
+    }
+
+
+    console.log(numberToObject(789));
+    console.log(numberToObject( 1234));
+    // or
+    // numberToObject(789);
+    // numberToObject(1234);
+
+    // Task 2
+
+    const basket = {
+        basketItems: [
+            {vendor_code: 10011,
+                product_name: "Телевизор",
+                quantity: 1,
+                unit_price: 30000
+            },
+
+            {vendor_code: 10022,
+                product_name: "Планшет",
+                quantity: 2,
+                unit_price: 23000
+            },
+
+            {vendor_code: 10145,
+                product_name: "Телефон",
+                quantity: 3,
+                unit_price: 15000
+            }
+        ],
+        countBasketPrice(basket) {
+            let tot_sum = 0;
+            for (let i = 0; i < basket.length; i++) {
+                tot_sum += basket[i].unit_price * basket[i].quantity;
+            }
+            return tot_sum;
+        }
+    };
+
+    console.log(basket.countBasketPrice(basket.basketItems));
+</script>
 </body>
 </html>
